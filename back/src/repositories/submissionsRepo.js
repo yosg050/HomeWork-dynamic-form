@@ -1,6 +1,6 @@
 import { GetCommand, PutCommand, ScanCommand } from "@aws-sdk/lib-dynamodb";
 import { ddb } from "../adapters/dynamodb.adapter.js";
-import { DuplicateSubmissionError, ValidationError } from "../errors/DomainErrors.js";
+import { DuplicateSubmissionError, InternalError, ValidationError } from "../errors/DomainErrors.js";
 
 const TABLE = process.env.DYNAMO_TABLE || "Submissions";
 
