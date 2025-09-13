@@ -12,6 +12,7 @@ export async function listSubmissions({ limit = 100, cursor } = {}) {
 
   const res = await apiFetch(`/submissions?${qs.toString()}`);
   const data = await res.json(); 
+  console.log("Backend returned:", data); 
   if (!data?.ok) {
     throw new Error(data?.message || "Failed to load submissions");
   }

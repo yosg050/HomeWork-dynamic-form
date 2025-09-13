@@ -3,6 +3,7 @@ import { apiFetch } from "./apiClient";
 export async function getAnalytics() {
   const res = await apiFetch("/analytics", { method: "GET" });
   const data = await res.json();
+  console.log("Backend returned:", data); 
 
   if (!data.ok) {
     throw new Error(data.message || "Failed to fetch analytics");

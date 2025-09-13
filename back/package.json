@@ -12,7 +12,6 @@
     "dependencies": {
         "@aws-sdk/client-dynamodb": "^3.883.0",
         "@aws-sdk/lib-dynamodb": "^3.883.0",
-        "@dynamic-form/shared": "file:../shared",
         "bcryptjs": "^3.0.2",
         "cors": "^2.8.5",
         "dotenv": "^17.2.2",
