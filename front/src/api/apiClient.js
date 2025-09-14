@@ -1,5 +1,5 @@
 const getApiBaseUrl = () => {
-  return "https://back-4sns4x4uh-yosef-gellers-projects.vercel.app";
+  return "https://back-yosg050-yosef-gellers-projects.vercel.app";
 };
 const API_BASE = (getApiBaseUrl() || "").replace(/\/$/, "");
 console.log("API_BASE:", API_BASE);
@@ -24,8 +24,7 @@ export async function apiFetch(
   let data = null;
   try {
     data = txt ? JSON.parse(txt) : null;
-  } catch (_) {
-  }
+  } catch (_) {}
 
   if (!res.ok && res.status !== 304) {
     const msg = (data && (data.message || data.error)) || `HTTP ${res.status}`;

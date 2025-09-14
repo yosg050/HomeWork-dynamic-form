@@ -32,6 +32,7 @@ app.use(corsHandler);
 app.use(
   cors({
     origin: [
+      "https://front-yosg050-yosef-gellers-projects.vercel.app",
       "http://localhost:5173",
       "http://localhost:3000",
       "https://front-psi-peach.vercel.app",
