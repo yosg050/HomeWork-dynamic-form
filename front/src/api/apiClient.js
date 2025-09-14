@@ -20,13 +20,11 @@ export async function apiFetch(
     body: body ? JSON.stringify(body) : undefined,
   });
 
-  // נקרא טקסט כדי שנוכל להציג שגיאה טובה גם אם זה לא JSON תקין
   const txt = await res.text().catch(() => "");
   let data = null;
   try {
     data = txt ? JSON.parse(txt) : null;
   } catch (_) {
-    // משאירים data=null אם זה לא JSON
   }
 
   if (!res.ok && res.status !== 304) {
@@ -34,5 +32,5 @@ export async function apiFetch(
     throw new Error(msg);
   }
 
-  return data; // << לא החזר Response, החזר את ה-JSON
+  return data;
 }
