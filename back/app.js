@@ -37,10 +37,9 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:3000",
-      "https://front-psi-peach.vercel.app",
+      "https://front-psi-peach.vercel.app", // הURL החדש
+      "https://front-kujdgv8st-yosef-gellers-projects.vercel.app", // הURL הישן
       "https://front-a55dnp2jy-yosef-gellers-projects.vercel.app",
-      // הוספת ה-URL החדש של ה-frontend שלך
-      "https://front-kujdgv8st-yosef-gellers-projects.vercel.app",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
