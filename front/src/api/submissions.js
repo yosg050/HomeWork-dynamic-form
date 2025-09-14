@@ -1,4 +1,4 @@
-import { apiFetch } from "./http/apiClient.js";
+import { apiFetch } from "./apiClient.js";
 
 export async function postSubmission(payload) {
   const res = await apiFetch("/submissions", { method: "POST", body: payload });

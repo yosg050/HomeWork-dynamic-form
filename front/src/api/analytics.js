@@ -1,4 +1,4 @@
-import { apiFetch } from "./http/apiClient.js";
+import { apiFetch } from "./apiClient.js";
 
 export async function getAnalytics() {
   const res = await apiFetch("/analytics", { method: "GET" });

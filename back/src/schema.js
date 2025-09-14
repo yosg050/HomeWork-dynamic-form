@@ -1,6 +1,5 @@
 import crypto from "crypto";
-// import schema from "../../shared/schema/form.schema.json" with  { type: "json" }; //dev
-import schema from "../src/shared/schema/form.schema.json" with  { type: "json" }; //prod
+import schema from "./shared/schema/form.schema.json" with  { type: "json" }; 
 export async function getSchema() {
   return schema;
 }

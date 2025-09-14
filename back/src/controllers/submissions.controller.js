@@ -1,6 +1,5 @@
 // @ts-nocheck
-// import { buildYupFromSchema } from "../../../shared/index.js"; //dev
-import { buildYupFromSchema } from "../shared/index.js"; //prod
+import { buildYupFromSchema } from "../shared/index.js";
 
 import { ValidationError } from "../errors/DomainErrors.js";
 import { putSubmission } from "../repositories/submissionsRepo.js";
