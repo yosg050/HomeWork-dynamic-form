@@ -1,8 +1,4 @@
-const getApiBaseUrl = () => {
-  return "https://back-yosg050-yosef-gellers-projects.vercel.app";
-};
-const API_BASE = (getApiBaseUrl() || "").replace(/\/$/, "");
-console.log("API_BASE:", API_BASE);
+const API_BASE = "https://back-yosg050-yosef-gellers-projects.vercel.app";
 
 export async function apiFetch(
   path,
