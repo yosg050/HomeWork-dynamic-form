@@ -60,9 +60,7 @@ export async function scanSubmissions({ limit = 100, cursor }) {
         cause: err.message,
       });
     }
-    throw new InternalError("DB scanSubmissions failed", {
-      cause: err.message,
-    });
+    throw new Error("Database error");
   }
 }
 
