@@ -1,9 +1,9 @@
-const API_BASE = "https://back-yosg050-yosef-gellers-projects.vercel.app";
-
 export async function apiFetch(
   path,
   { method = "GET", headers = {}, body } = {}
 ) {
+  const API_BASE = "https://back-yosg050-yosef-gellers-projects.vercel.app";
+  console.log("DEBUG API_BASE:", API_BASE);
   const url = `${API_BASE}${path.startsWith("/") ? path : `/${path}`}`;
 
   const res = await fetch(url, {

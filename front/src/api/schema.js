@@ -1,6 +1,6 @@
-import { apiFetch } from "./apiClient";
+import { apiFetch } from "./http/apiClient.js";
 
 export async function getSchema() {
   const data = await apiFetch("/schema");
-  return data; // apiFetch כבר מחזיר { schema: ... }
+  return data.schema; 
 }

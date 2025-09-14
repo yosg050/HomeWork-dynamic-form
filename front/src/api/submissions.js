@@ -1,4 +1,4 @@
-import { apiFetch } from "./apiClient";
+import { apiFetch } from "./http/apiClient.js";
 
 export async function postSubmission(payload) {
   const res = await apiFetch("/submissions", { method: "POST", body: payload });
@@ -11,8 +11,8 @@ export async function listSubmissions({ limit = 100, cursor } = {}) {
   if (cursor !== undefined) qs.set("cursor", JSON.stringify(cursor));
 
   const res = await apiFetch(`/submissions?${qs.toString()}`);
-  const data = await res.json(); 
-  console.log("Backend returned:", data); 
+  const data = await res.json();
+  console.log("Backend returned:", data);
   if (!data?.ok) {
     throw new Error(data?.message || "Failed to load submissions");
   }

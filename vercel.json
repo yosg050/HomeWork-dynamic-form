@@ -30,5 +30,19 @@
     },
     "env": {
         "NODE_ENV": "production"
-    }
+    },
+    "rewrites": [
+        {
+            "source": "/schema",
+            "destination": "https://back-yosg050-yosef-gellers-projects.vercel.app/schema"
+        },
+        {
+            "source": "/submissions",
+            "destination": "https://back-yosg050-yosef-gellers-projects.vercel.app/submissions"
+        },
+        {
+            "source": "/analytics",
+            "destination": "https://back-yosg050-yosef-gellers-projects.vercel.app/analytics"
+        }
+    ]
 }

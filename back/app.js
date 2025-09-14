@@ -29,28 +29,19 @@ dotenv.config();
 const app = express();
 app.use(corsHandler);
 
+const FRONT = "https://dynamic-form-frontend-final.vercel.app";
+
 app.use(
   cors({
-    origin: [
-      "https://front-n1kk8rtlp-yosef-gellers-projects.vercel.app",
-      "https://front-yosg050-yosef-gellers-projects.vercel.app",
-      "http://localhost:5173",
-      "http://localhost:3000",
-      "https://front-psi-peach.vercel.app",
-      "https://front-psi-peach.vercel.app/",
-      "https://front-yosef-gellers-projects.vercel.app/",
-      "https://front-yosg050-yosef-gellers-projects.vercel.app/",
-      "https://front-ebu7lzxmd-yosef-gellers-projects.vercel.app/",
-      "https://front-kujdgv8st-yosef-gellers-projects.vercel.app", // הURL הישן
-      "https://front-a55dnp2jy-yosef-gellers-projects.vercel.app",
-    ],
+    origin: FRONT,
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "Accept"],
   })
 );
 
-app.options("*", cors());
+
+app.options("*", cors({ origin: FRONT })); 
 
 app.use(express.json());
 
