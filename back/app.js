@@ -4,10 +4,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import fs from "fs";
 
-// בדיקה איזה קובץ shared קיים
 let buildYupFromSchema;
 if (fs.existsSync("./src/shared/index.js")) {
-  // פרודקשן
   const { buildYupFromSchema: prod } = await import("./src/shared/index.js");
   buildYupFromSchema = prod;
 } else {
@@ -28,10 +26,9 @@ import analyticsRoutes from "./src/routes/analytics.routes.js";
 import { corsHandler } from "./src/middlewares/corsHandler.js";
 
 dotenv.config();
-app.use(corsHandler);
 const app = express();
+app.use(corsHandler);
 
-// הגדרת CORS מתוקנת - להוסיף את ה-domain החדש של ה-frontend
 app.use(
   cors({
     origin: [
@@ -47,7 +44,6 @@ app.use(
   })
 );
 
-// הוספת middleware נוסף לטיפול ב-preflight requests
 app.options("*", cors());
 
 app.use(express.json());
@@ -56,7 +52,6 @@ app.use("/schema", schemaRoutes);
 app.use("/submissions", submissionsRoutes);
 app.use("/analytics", analyticsRoutes);
 
-// הוספת middleware לטיפול ב-404
 app.use(notFound);
 app.use(errorHandler);
 
