@@ -1,7 +1,6 @@
 const getApiBaseUrl = () => {
-  return "https://back-mblxwgk3p-yosef-gellers-projects.vercel.app";
+  return "https://back-4sns4x4uh-yosef-gellers-projects.vercel.app";
 };
-
 const API_BASE = (getApiBaseUrl() || "").replace(/\/$/, "");
 console.log("API_BASE:", API_BASE);
 
