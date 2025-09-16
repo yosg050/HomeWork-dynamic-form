@@ -32,7 +32,7 @@ export function GenderChart({ data }) {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h6" gutterBottom sx={{ textAlign: "center",  }}>
+        <Typography variant="h6" gutterBottom sx={{ textAlign: "center" }}>
           Gender Distribution
         </Typography>
         <Box sx={{ mt: 3 }}>

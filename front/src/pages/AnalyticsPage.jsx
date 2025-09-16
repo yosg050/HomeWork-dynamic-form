@@ -16,7 +16,6 @@ import { useAnalytics } from "../hooks/analytics";
 
 function AnalyticsContent() {
   const { data, isLoading, error } = useAnalytics();
-
   if (isLoading) {
     return (
       <Container sx={{ textAlign: "center", py: 8 }}>
@@ -87,7 +86,7 @@ function AnalyticsContent() {
               <GenderChart data={analyticsData.perGender} />
             </Grid>
             <Grid size={{ xs: 10, md: 6 }}>
-              <AgeChart data={analyticsData.derived?.ageBuckets} />
+              <AgeChart data={analyticsData.ageBuckets} />{" "}
             </Grid>
           </Grid>
         </Box>
@@ -95,7 +94,7 @@ function AnalyticsContent() {
         <Box>
           <Grid container spacing={3} justifyContent="center">
             <Grid size={{ xs: 10, md: 10 }}>
-              <SubmissionsTimelineChart data={analyticsData.derived} />
+              <SubmissionsTimelineChart data={analyticsData.dailySubmissions} />
             </Grid>
           </Grid>
         </Box>
@@ -112,7 +111,7 @@ export default function AnalyticsPage() {
           <Container sx={{ textAlign: "center", py: 8 }}>
             <CircularProgress size={60} />
             <Typography variant="h6" sx={{ mt: 2 }}>
-              <Loading />
+              Loading Analytics...
             </Typography>
           </Container>
         }

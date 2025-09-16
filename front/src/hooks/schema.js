@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { getSchema } from "@/api/schema";
+import { getSchema } from "../api/schema";
 
 export function useSchema() {
   const qc = useQueryClient();
